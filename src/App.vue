@@ -2,17 +2,18 @@
 import axios from 'axios';
 import CreateUser from './components/CreateUser.vue';
 import GetAllUsers from './components/GetAllUsers.vue';
+import ReferrerTree from './components/ReferrerTree.vue'
 
 axios.defaults.baseURL = 'http://localhost:3000/api/ref-system/';
 
 export default {
   data() {
     return {
-      users: [],
-      external_user_id: "",
-      project_Id: "",
-      referrer_id: null,
-      newUser: null,
+      // users: [],
+      // external_user_id: "",
+      // project_Id: "",
+      // referrer_id: null,
+      // newUser: null,
     }
   },
   computed: {
@@ -23,13 +24,15 @@ export default {
   methods: {},
   components: {
     CreateUser,
-    GetAllUsers
+    GetAllUsers,
+    ReferrerTree,
   },
 }
 </script>
 
 <template>
   <div class="wrapper">
+    <ReferrerTree />
     <GetAllUsers :func="setTitleGetAllUsers"/>
     <CreateUser title="Create user" />
   </div>
